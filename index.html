@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wyatt Fry — DevOps &amp; Full-Stack Engineer</title>
+<meta name="description" content="Senior DevOps / full-stack engineer for hire. Kubernetes, Terraform, Azure/AWS, Go, CI/CD, and LLM integration.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>W</text></svg>">
+<style>
+  :root{
+    --bg:#0b0d10; --bg2:#12151a; --text:#e8eaed; --muted:#9aa4af;
+    --accent:#5fd0a3; --border:#232830; --card:#12151a;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#fbfbfa; --bg2:#ffffff; --text:#16181c; --muted:#565f6a;
+      --accent:#0f8a5f; --border:#e6e8eb; --card:#ffffff; }
+  }
+  :root[data-theme="dark"]{ --bg:#0b0d10; --bg2:#12151a; --text:#e8eaed; --muted:#9aa4af; --accent:#5fd0a3; --border:#232830; --card:#12151a; }
+  :root[data-theme="light"]{ --bg:#fbfbfa; --bg2:#ffffff; --text:#16181c; --muted:#565f6a; --accent:#0f8a5f; --border:#e6e8eb; --card:#ffffff; }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  header.hero{padding:96px 0 56px}
+  .kicker{color:var(--accent);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:.8rem}
+  h1{font-size:2.4rem;margin:.3em 0 .2em;letter-spacing:-.02em}
+  .sub{color:var(--muted);font-size:1.15rem;max-width:60ch}
+  .cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{
+    display:inline-block;padding:11px 20px;border-radius:8px;text-decoration:none;
+    font-weight:600;font-size:.95rem;border:1px solid var(--border);
+  }
+  .btn.primary{background:var(--accent);color:#06120d;border-color:var(--accent)}
+  .btn.ghost{color:var(--text)}
+  section{padding:40px 0;border-top:1px solid var(--border)}
+  h2{font-size:1.3rem;margin-bottom:16px}
+  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px}
+  .card h3{margin:0 0 8px;font-size:1rem}
+  .card p{margin:0;color:var(--muted);font-size:.92rem}
+  .stack{color:var(--muted);font-size:.95rem}
+  .exp{margin-bottom:22px}
+  .exp .role{font-weight:600}
+  .exp .org{color:var(--muted)}
+  .exp ul{margin:8px 0 0;padding-left:20px;color:var(--muted);font-size:.95rem}
+  footer{padding:40px 0 80px;color:var(--muted);font-size:.9rem}
+  a{color:var(--accent)}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .badge{border:1px solid var(--border);border-radius:999px;padding:4px 12px;font-size:.8rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="kicker">Available for freelance / contract</div>
+    <h1>Wyatt Fry</h1>
+    <p class="sub">Senior DevOps &amp; full-stack engineer. I design and run
+    infrastructure that doesn't need babysitting, and ship the application
+    features that sit on top of it — Kubernetes, Terraform, Azure/AWS, Go,
+    CI/CD, and LLM integration.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:dev@wyattfry.com">dev@wyattfry.com</a>
+      <a class="btn ghost" href="resume.pdf">Resume (PDF)</a>
+      <a class="btn ghost" href="https://github.com/wyattfry">GitHub</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/wyatt-fry/">LinkedIn</a>
+    </div>
+    <div class="badges">
+      <span class="badge">CKA</span>
+      <span class="badge">CKAD</span>
+      <span class="badge">Azure Administrator Associate</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>What I do</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Cloud &amp; Kubernetes</h3>
+        <p>Design, hardening, and migration on Azure/AWS. Production K8s
+        clusters, Helm charts, GitOps.</p>
+      </div>
+      <div class="card">
+        <h3>CI/CD &amp; IaC</h3>
+        <p>Terraform, Ansible, pipeline design — from first commit to
+        canary rollout in production.</p>
+      </div>
+      <div class="card">
+        <h3>Full-stack features</h3>
+        <p>Go, Node, .NET, Python. I can own a feature end to end, not just
+        the infra underneath it.</p>
+      </div>
+      <div class="card">
+        <h3>LLM integration</h3>
+        <p>Adding AI-powered features into existing products — extraction
+        pipelines, prompt caching, provider abstraction.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Recent proof</h2>
+    <p class="stack">Solo-built a full SaaS MVP — Chrome extension, Go
+    backend, Postgres, LLM-powered data extraction, auth, CI/CD — in about
+    70 hours over five weeks, part-time. End-to-end ownership, not just
+    infra.</p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="exp">
+      <div class="role">Senior Go Developer, Terraform Azure Provider</div>
+      <div class="org">HashiCorp / IBM · 2025</div>
+      <ul>
+        <li>Led Azure Provider docs and contributor experience improvements</li>
+        <li>Shipped new Azure service support, major-version tech-debt cleanup</li>
+      </ul>
+    </div>
+
+    <div class="exp">
+      <div class="role">DevSecOps Engineer II</div>
+      <div class="org">Bridgephase — US DoD / Air Force · 2024</div>
+      <ul>
+        <li>Helm charts for the Air Force's Big Bang Kubernetes platform</li>
+        <li>AWS GovCloud, k3d, hardened container image validation</li>
+      </ul>
+    </div>
+
+    <div class="exp">
+      <div class="role">Senior DevOps Engineer / Full-Stack Engineer</div>
+      <div class="org">Zip Co Ltd — BNPL Fintech · 2018–2024</div>
+      <ul>
+        <li>Ran EventStoreDB clusters (2.5B events), Azure DevOps pipelines, canary deploys</li>
+        <li>Built merchant self-signup API generating $4M+ transaction volume</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    Wyatt Fry · <a href="mailto:dev@wyattfry.com">dev@wyattfry.com</a> ·
+    <a href="https://github.com/wyattfry">github.com/wyattfry</a>
+  </footer>
+</div>
+
+</body>
+</html>
