@@ -25,11 +25,11 @@
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     line-height:1.55;
   }
-  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px}
   header.hero{padding:96px 0 56px}
   .kicker{color:var(--accent);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:.8rem}
   h1{font-size:2.4rem;margin:.3em 0 .2em;letter-spacing:-.02em}
-  .sub{color:var(--muted);font-size:1.15rem;max-width:60ch}
+  .sub{color:var(--muted);font-size:1.15rem;max-width:64ch}
   .cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
   .btn{
     display:inline-block;padding:11px 20px;border-radius:8px;text-decoration:none;
@@ -39,19 +39,41 @@
   .btn.ghost{color:var(--text)}
   section{padding:40px 0;border-top:1px solid var(--border)}
   h2{font-size:1.3rem;margin-bottom:16px}
-  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px}
-  .card h3{margin:0 0 8px;font-size:1rem}
-  .card p{margin:0;color:var(--muted);font-size:.92rem}
   .stack{color:var(--muted);font-size:.95rem}
-  .exp{margin-bottom:22px}
+  .exp{margin-bottom:26px}
   .exp .role{font-weight:600}
   .exp .org{color:var(--muted)}
   .exp ul{margin:8px 0 0;padding-left:20px;color:var(--muted);font-size:.95rem}
+  .exp ul li{margin-bottom:4px}
   footer{padding:40px 0 80px;color:var(--muted);font-size:.9rem}
   a{color:var(--accent)}
-  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-  .badge{border:1px solid var(--border);border-radius:999px;padding:4px 12px;font-size:.8rem;color:var(--muted)}
+
+  /* what-i-do: icon bullet list, grouped */
+  .capabilities{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
+  .cap-group h3{margin:0 0 10px;font-size:.95rem;color:var(--text)}
+  .cap-group ul{list-style:none;margin:0;padding:0}
+  .cap-group li{display:flex;gap:10px;align-items:flex-start;margin-bottom:9px;font-size:.92rem;color:var(--muted)}
+  .cap-icon{flex:0 0 auto;font-size:1.05rem;line-height:1.4}
+
+  /* portfolio */
+  .portfolio-title{font-weight:600;font-size:1.05rem}
+  .portfolio ul{margin:10px 0 0;padding-left:20px;color:var(--muted);font-size:.95rem}
+  .portfolio ul li{margin-bottom:4px}
+
+  /* certs */
+  .certs{display:flex;flex-wrap:wrap;gap:14px}
+  .cert{
+    display:flex;align-items:center;gap:12px;background:var(--card);
+    border:1px solid var(--border);border-radius:10px;padding:12px 16px;
+    min-width:220px;flex:1 1 220px;
+  }
+  .cert-badge{
+    flex:0 0 auto;width:40px;height:40px;border-radius:8px;
+    background:var(--accent);color:#06120d;display:flex;align-items:center;
+    justify-content:center;font-size:1.2rem;font-weight:700;
+  }
+  .cert-name{font-weight:600;font-size:.92rem}
+  .cert-date{color:var(--muted);font-size:.82rem}
 </style>
 </head>
 <body>
@@ -70,50 +92,120 @@
       <a class="btn ghost" href="https://github.com/wyattfry">GitHub</a>
       <a class="btn ghost" href="https://www.linkedin.com/in/wyatt-fry/">LinkedIn</a>
     </div>
-    <div class="badges">
-      <span class="badge">CKA</span>
-      <span class="badge">CKAD</span>
-      <span class="badge">Azure Administrator Associate</span>
-    </div>
   </header>
 
   <section>
     <h2>What I do</h2>
-    <div class="services">
-      <div class="card">
+    <div class="capabilities">
+      <div class="cap-group">
         <h3>Cloud &amp; Kubernetes</h3>
-        <p>Design, hardening, and migration on Azure/AWS. Production K8s.</p>
+        <ul>
+          <li><span class="cap-icon">☸️</span> EKS / AKS design, multi-region and multi-cloud cluster topologies</li>
+          <li><span class="cap-icon">🔐</span> Hardened, production-grade cluster builds — RBAC, network policy, image provenance</li>
+          <li><span class="cap-icon">🖥️</span> VM and container image pipelines (golden images, EC2 Image Builder, Docker Bake)</li>
+        </ul>
       </div>
-      <div class="card">
+      <div class="cap-group">
         <h3>CI/CD &amp; IaC</h3>
-        <p>Terraform, Ansible, pipeline design, GitOps, FluxCD, GitHub Actions, GitLab Pipelines, deployment strategies</p>
+        <ul>
+          <li><span class="cap-icon">🏗️</span> Terraform (incl. Terraform Enterprise) for VPC, RDS, EKS, ECR, IAM</li>
+          <li><span class="cap-icon">🔁</span> GitOps with FluxCD — app and platform config as the source of truth</li>
+          <li><span class="cap-icon">⚙️</span> GitHub Actions / GitLab Pipelines / Azure DevOps, canary and staged rollouts</li>
+        </ul>
       </div>
-      <div class="card">
+      <div class="cap-group">
         <h3>Full-stack features</h3>
-        <p>Go, Node, C#, .NET, Python. Entire SDLC</p>
+        <ul>
+          <li><span class="cap-icon">🧩</span> Go, C#/.NET, Node, Python — own a feature end to end, not just the infra under it</li>
+          <li><span class="cap-icon">🗄️</span> Postgres, SQL Server, EventStoreDB schema and pipeline design</li>
+          <li><span class="cap-icon">🧪</span> Full SDLC: local dev, testing, CI, deploy, on-call ownership</li>
+        </ul>
       </div>
-      <div class="card">
-        <h3>LLM integration</h3>
-        <p>Adding AI-powered features into existing products — extraction
-        pipelines, prompt caching, provider abstraction.</p>
+      <div class="cap-group">
+        <h3>Observability &amp; LLM integration</h3>
+        <ul>
+          <li><span class="cap-icon">📈</span> Prometheus/Grafana and Dynatrace stacks — metrics, alerting, on-call runbooks</li>
+          <li><span class="cap-icon">🤖</span> LLM-powered extraction pipelines, prompt caching, provider abstraction</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio">
+    <h2>Portfolio</h2>
+    <span class="portfolio-title"><a href="https://dev.spexxtool.com">Sally / SpexxTool</a></span>
+    <p class="stack">Solo-built SaaS product for architects specifying
+    finish materials — Chrome extension captures product pages, backend
+    normalizes and prices them into a shareable schedule.</p>
+    <ul>
+      <li>Chrome MV3 extension — page capture, zone picker, release pipeline via CI-driven Store publishing</li>
+      <li>Go backend, SSR frontend (Go templates + HTMX), Postgres — no SPA framework, no build step</li>
+      <li>LLM extraction pipeline with prompt caching and a swappable provider interface (hosted + local/Ollama)</li>
+      <li>Vendor-specific scraping/parsing (Lightology, Ferguson Apollo) into canonical field mappings</li>
+      <li>Auth, project sharing via slugged links, contractor-facing read-only views</li>
+      <li>DXF export — AutoCAD AC1015 with MTEXT, multi-schedule stacking, variable row heights</li>
+      <li>GitHub Actions CI/CD, Docker Compose deployment</li>
+    </ul>
+    <p class="stack">~70 hours, five weeks, part-time, solo.</p>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    <div class="certs">
+      <div class="cert">
+        <div class="cert-badge">☸</div>
+        <div>
+          <div class="cert-name">Certified Kubernetes Administrator</div>
+          <div class="cert-date">May 2024</div>
+        </div>
+      </div>
+      <div class="cert">
+        <div class="cert-badge">☸</div>
+        <div>
+          <div class="cert-name">Certified Kubernetes Application Developer</div>
+          <div class="cert-date">Nov 2022</div>
+        </div>
+      </div>
+      <div class="cert">
+        <div class="cert-badge">▲</div>
+        <div>
+          <div class="cert-name">Azure Administrator Associate</div>
+          <div class="cert-date">Oct 2023</div>
+        </div>
+      </div>
+      <div class="cert">
+        <div class="cert-badge">▲</div>
+        <div>
+          <div class="cert-name">Azure Fundamentals</div>
+          <div class="cert-date">Jul 2023</div>
+        </div>
       </div>
     </div>
   </section>
 
   <section>
-    <h2>Portfolio</h2>
-    <a href"https://dev.spexxtool.com">Sally / SpexxTool</a>
-    <p class="stack">Solo-built a full SaaS Solution for architects — Chrome extension, Go
-    backend, SSR frontend with Go templates and HTMX, Postgres, LLM-powered data extraction, auth, GitHub Actions CI/CD — in about
-    70 hours over five weeks. End-to-end ownership</p>
-  </section>
-
-  <section>
     <h2>Experience</h2>
-    
+
     <div class="exp">
-      Fiserv
-      </div>
+      <div class="role">Platform Engineer</div>
+      <div class="org">Fiserv · Nov 2025–present</div>
+      <ul>
+        <li>Own <strong>Coder</strong> (cloud developer environment platform) end to end — took it from a
+        manually-built PoC serving a small pilot group to a fully IaC and
+        GitOps-managed deployment now serving 1,000+ developers, targeting
+        2,500+ by EOY</li>
+        <li>Control plane on AWS EKS (US); worker clusters on AWS EKS (Europe)
+        and Azure AKS (US) — separate dev and prod instances across all clusters</li>
+        <li>Terraform Enterprise managing VPCs, RDS, EKS, ECR, and IAM across accounts/regions</li>
+        <li>FluxCD GitOps managing both supporting infrastructure apps and Coder's own workspace/template config</li>
+        <li>Monitoring and alerting on a standard Prometheus/Grafana stack plus Dynatrace</li>
+        <li>Docker Bake pipeline building RHEL UBI-based container images for Linux pod workspaces</li>
+        <li>EC2 Image Builder pipeline producing golden Windows Server 2022 VM images for VM-based workspaces</li>
+        <li>Inherited and replaced a set of scattered, undocumented Ansible scripts that built golden VM
+        images (snapshotted to launch self-hosted GitHub Actions runners, Windows and Linux) with the
+        image-pipeline approach above</li>
+      </ul>
+    </div>
 
     <div class="exp">
       <div class="role">Senior Go Developer, Terraform Azure Provider</div>
