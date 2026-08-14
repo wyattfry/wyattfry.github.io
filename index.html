@@ -42,7 +42,10 @@
   .stack{color:var(--muted);font-size:.95rem}
   .exp{margin-bottom:26px}
   .exp .role{font-weight:600}
-  .exp .org{color:var(--muted)}
+  .exp .org{color:var(--muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .org-logo{width:18px;height:18px;border-radius:4px;object-fit:contain;background:#fff;border:1px solid var(--border);padding:2px;vertical-align:middle}
+  .org-link{display:inline-flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none}
+  .org-link:hover{color:var(--accent)}
   .exp ul{margin:8px 0 0;padding-left:20px;color:var(--muted);font-size:.95rem}
   .exp ul li{margin-bottom:4px}
   footer{padding:40px 0 80px;color:var(--muted);font-size:.9rem}
@@ -61,23 +64,24 @@
   .portfolio ul li{margin-bottom:4px}
 
   /* certs */
-  .certs{display:flex;flex-wrap:wrap;gap:14px}
+  .certs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  @media (max-width:560px){ .certs{grid-template-columns:1fr} }
   .cert{
-    display:flex;align-items:center;gap:12px;background:var(--card);
-    border:1px solid var(--border);border-radius:10px;padding:12px 16px;
-    min-width:220px;flex:1 1 220px;text-decoration:none;
-    transition:border-color .15s ease, transform .15s ease;
+    display:flex;align-items:center;gap:14px;background:var(--card);
+    border:1px solid var(--border);border-radius:10px;padding:16px;
+    text-decoration:none;transition:border-color .15s ease, transform .15s ease;
   }
   .cert:hover{border-color:var(--accent);transform:translateY(-1px)}
   .cert-badge{
-    flex:0 0 auto;width:40px;height:40px;border-radius:8px;
+    flex:0 0 auto;width:44px;height:44px;border-radius:8px;
     background:#fff;border:1px solid var(--border);display:flex;align-items:center;
-    justify-content:center;padding:7px;
+    justify-content:center;padding:8px;align-self:center;
   }
-  .cert-badge img{width:100%;height:100%;display:block}
+  .cert-badge img{width:100%;height:100%;display:block;object-fit:contain}
   .cert-name{font-weight:600;font-size:.92rem;color:var(--text)}
-  .cert-date{color:var(--muted);font-size:.82rem}
+  .cert-date{color:var(--muted);font-size:.82rem;margin-top:2px}
   .cert-verify{color:var(--accent);font-size:.78rem;font-weight:600}
+  .cert-desc{color:var(--muted);font-size:.82rem;margin:6px 0 0;line-height:1.4}
 </style>
 </head>
 <body>
@@ -161,6 +165,7 @@
         <div>
           <div class="cert-name">Certified Kubernetes Administrator</div>
           <div class="cert-date">May 2024 · <span class="cert-verify">Verify ↗</span></div>
+          <p class="cert-desc">Hands-on ability to install, configure, and operate production Kubernetes clusters — networking, RBAC, and troubleshooting.</p>
         </div>
       </a>
       <a class="cert" href="https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/9ccd3de2-f184-437a-ab81-4b6282b91e9e-wyatt-fry-590df92a-6312-4059-96d0-d40e90f050a1-certificate.pdf" target="_blank" rel="noopener">
@@ -168,6 +173,7 @@
         <div>
           <div class="cert-name">Certified Kubernetes Application Developer</div>
           <div class="cert-date">Nov 2022 · <span class="cert-verify">Verify ↗</span></div>
+          <p class="cert-desc">Designing, building, and deploying cloud-native applications on Kubernetes — manifests, config, and observability.</p>
         </div>
       </a>
       <a class="cert" href="https://learn.microsoft.com/api/credentials/share/en-us/Wyatt-9606/D78D2464241412B7?sharingId" target="_blank" rel="noopener">
@@ -175,6 +181,7 @@
         <div>
           <div class="cert-name">Azure Administrator Associate</div>
           <div class="cert-date">Oct 2023 · <span class="cert-verify">Verify ↗</span></div>
+          <p class="cert-desc">Day-to-day Azure administration — compute, storage, networking, identity, and governance at production scale.</p>
         </div>
       </a>
       <a class="cert" href="https://learn.microsoft.com/api/credentials/share/en-us/Wyatt-9606/1D350EBBBFEE5C48?sharingId" target="_blank" rel="noopener">
@@ -182,6 +189,7 @@
         <div>
           <div class="cert-name">Azure Fundamentals</div>
           <div class="cert-date">Jul 2023 · <span class="cert-verify">Verify ↗</span></div>
+          <p class="cert-desc">Foundational understanding of cloud concepts and core Azure services, pricing, and support models.</p>
         </div>
       </a>
     </div>
@@ -192,12 +200,15 @@
 
     <div class="exp">
       <div class="role">Platform Engineer</div>
-      <div class="org">Fiserv · Nov 2025–present</div>
+      <div class="org">
+        <a class="org-link" href="https://www.fiserv.com" target="_blank" rel="noopener"><img class="org-logo" src="assets/logos/fiserv.png" alt="Fiserv">Fiserv</a>
+        · Nov 2025–present
+      </div>
       <ul>
-        <li>Own <strong><a href="https://coder.com" target="_blank" rel="noopener">Coder</a></strong> (cloud developer environment platform) end to end — took it from a
+        <li>Own <strong><a href="https://coder.com" target="_blank" rel="noopener">Coder</a></strong> (self-hosted cloud developer environment platform) end to end — took it from a
         manually-built PoC serving a small pilot group to a fully IaC and
-        GitOps-managed deployment now serving 1,000+ developers, targeting
-        2,500+ by EOY</li>
+        GitOps-managed deployment now serving 1,000+ developers across 100+ Kubernetes nodes
+        and growing, targeting 2,500+ developers by EOY</li>
         <li>Control plane on AWS EKS (US); worker clusters on AWS EKS (Europe)
         and Azure AKS (US) — separate dev and prod instances across all clusters</li>
         <li>Terraform Enterprise managing VPCs, RDS, EKS, ECR, and IAM across accounts/regions</li>
@@ -213,7 +224,11 @@
 
     <div class="exp">
       <div class="role">Senior Go Developer, Terraform Azure Provider</div>
-      <div class="org">HashiCorp / IBM · 2025</div>
+      <div class="org">
+        <a class="org-link" href="https://www.hashicorp.com" target="_blank" rel="noopener"><img class="org-logo" src="assets/logos/hashicorp.png" alt="HashiCorp">HashiCorp</a>
+        / <a class="org-link" href="https://www.ibm.com" target="_blank" rel="noopener"><img class="org-logo" src="assets/logos/ibm.png" alt="IBM">IBM</a>
+        · 2025
+      </div>
       <ul>
         <li>Led Azure Provider docs and contributor experience improvements</li>
         <li>Shipped new Azure service support, major-version tech-debt cleanup</li>
@@ -223,16 +238,25 @@
 
     <div class="exp">
       <div class="role">DevSecOps Engineer II</div>
-      <div class="org">Bridgephase — US DoD / Air Force · 2024</div>
+      <div class="org">
+        <a class="org-link" href="https://www.bridgephase.com" target="_blank" rel="noopener"><img class="org-logo" src="assets/logos/bridgephase.png" alt="Bridgephase">Bridgephase</a>
+        — US DoD / Air Force · 2024
+      </div>
       <ul>
-        <li>Helm charts for the Air Force's Big Bang Kubernetes platform</li>
+        <li>Helm charts and GitOps packaging for the Air Force's Big Bang Kubernetes platform (Iron Bank-hardened, DoD-wide DevSecOps reference architecture)</li>
+        <li>Wired Kiali labels through to Thanos, Fluent Bit, Promtail, and metrics-server for consistent service-mesh observability across the stack</li>
+        <li>Refreshed Keycloak SSO architecture and quickstart documentation for the platform</li>
         <li>AWS GovCloud, k3d, hardened container image validation</li>
+        <li><a href="https://repo1.dso.mil/wyatt.fry" target="_blank" rel="noopener">View all my commits</a> in the Big Bang umbrella chart (repo1.dso.mil)</li>
       </ul>
     </div>
 
     <div class="exp">
       <div class="role">Senior DevOps Engineer / Full-Stack Engineer</div>
-      <div class="org">Zip Co Ltd — BNPL Fintech · 2018–2024</div>
+      <div class="org">
+        <a class="org-link" href="https://zip.co" target="_blank" rel="noopener"><img class="org-logo" src="assets/logos/zip.png" alt="Zip Co">Zip Co Ltd</a>
+        — BNPL Fintech · 2018–2024
+      </div>
       <ul>
         <li>Ran EventStoreDB clusters (2.5B events), Azure DevOps pipelines, canary deploys</li>
         <li>Built merchant self-signup API generating $4M+ transaction volume</li>
@@ -243,9 +267,13 @@
 
   <footer>
     Wyatt Fry · <a href="mailto:dev@wyattfry.com">dev@wyattfry.com</a> ·
-    <a href="https://github.com/wyattfry">github.com/wyattfry</a>
+    <a href="https://github.com/wyattfry">github.com/wyattfry</a> ·
+    <span id="year"></span>
   </footer>
 </div>
 
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
